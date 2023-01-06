@@ -258,25 +258,38 @@ public class Resort implements FIRE // do not change this header
 
     // ***************private methods**************
     private void loadPasses() {
-        Pass pass1 = new Pass(1, "John", 1, 10, 15);
-        Pass pass2 = new Pass(2, "Mary", 2, 20, 10);
-        Pass pass3 = new Pass(3, "Peter", 3, 30, 5);
-        Pass pass4 = new Pass(4, "Paul", 4, 40, 10);
-        Pass pass5 = new Pass(5, "Sarah", 5, 50, 15);    
+        Pass touristPass = new Pass(1, "John", 1, 10, 15);
+        Pass businessPass = new Pass(2, "Mary", 2, 20, 10);
+        Pass employeePass = new Pass(3, "Peter", 3, 30, 5);
 
-        // add all Passes to the collection of Passes
-        passes.add(pass1);
-        passes.add(pass2);
-        passes.add(pass3);
-        passes.add(pass4);
-        passes.add(pass5);
+        passes.add(touristPass);
+        passes.add(businessPass);
+        passes.add(employeePass);
 
-        // add all Passes to the Base Island
-        islands.get(0).addPass(pass1);
-        islands.get(1).addPass(pass2);
-        islands.get(2).addPass(pass3);
-        islands.get(3).addPass(pass4);
-        islands.get(4).addPass(pass5);
+        islands.get(0).addPass(touristPass);
+        islands.get(1).addPass(businessPass);
+        islands.get(2).addPass(employeePass);
+        
+    }
+        // Pass pass1 = new Pass(1, "John", 1, 10, 15);
+        // Pass pass2 = new Pass(2, "Mary", 2, 20, 10);
+        // Pass pass3 = new Pass(3, "Peter", 3, 30, 5);
+        // Pass pass4 = new Pass(4, "Paul", 4, 40, 10);
+        // Pass pass5 = new Pass(5, "Sarah", 5, 50, 15);    
+
+        // // add all Passes to the collection of Passes
+        // passes.add(pass1);
+        // passes.add(pass2);
+        // passes.add(pass3);
+        // passes.add(pass4);
+        // passes.add(pass5);
+
+        // // add all Passes to the Base Island
+        // islands.get(0).addPass(pass1);
+        // islands.get(1).addPass(pass2);
+        // islands.get(2).addPass(pass3);
+        // islands.get(3).addPass(pass4);
+        // islands.get(4).addPass(pass5);
     }
 
     private void loadIslandsAndFerries() {
