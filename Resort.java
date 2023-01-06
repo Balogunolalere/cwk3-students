@@ -269,6 +269,7 @@ public class Resort implements FIRE // do not change this header
         islands.get(0).addPass(touristPass);
         islands.get(1).addPass(businessPass);
         islands.get(2).addPass(employeePass);
+
         
     }
         // Pass pass1 = new Pass(1, "John", 1, 10, 15);
@@ -290,7 +291,7 @@ public class Resort implements FIRE // do not change this header
         // islands.get(2).addPass(pass3);
         // islands.get(3).addPass(pass4);
         // islands.get(4).addPass(pass5);
-    }
+    
 
     private void loadIslandsAndFerries() {
         // create all Islands
