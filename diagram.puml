@@ -1,0 +1,114 @@
+@startuml Resort
+
+
+class ResortUI {
+-Scanner reader
+-FIRE fortunate
++runUI()
++getOption(): int
++listAllResort()
++listAllPasses()
++listOneIsland()
++findLocationOfPass()
++tryTravel()
++travelNow()
++viewPass()
++updateCredits()
++convertPts()
+}
+
+class Resort {
+-List<Island> islands
+-List<Ferry> ferries
+-List<Pass> passes
+-String location
++Resort(String loc)
++toString(): String
++getAllPassesOnAllIslands(): String
++findPassLocation(int cd): String
++viewAPass(int cd): String
++getIslandId(String island): int
++addNewPass(String name, int cd, int num): void
++addAPassToAnIsland(int id, int passId): void
++removeAPassFromAnIsland(int id, int passId): void
++movePass(int passId, String destination): void
++loadIslandsAndFerries(): void
++loadPasses(): void
+}
+
+class Island
+{
+  -id : int
+  -name : String
+  -rating : int
+  -capacity : int
+  -passes : List<Pass>
+  +Island(int id, String name, int rating, int capacity)
+  +getId() : int
+  +setId(int id) : void
+  +getName() : String
+  +setName(String name) : void
+  +getRating() : int
+  +setRating(int rating) : void
+  +getCapacity() : int
+  +setCapacity(int capacity) : void
+  +getPasses() : List<Pass>
+  +setPasses(List<Pass> passes) : void
+  +toString() : String
+  +isAllowed(int luxuryRating) : boolean
+  +isAtCapacity() : boolean
+  +addPass(Pass pass) : void
+  +removePass(Pass pass) : void
+  +isOnIsland(Pass pass) : boolean
+}
+
+class Ferry
+{
+  -journeyCode : int
+  -source : Island
+  -destination : Island
+  -price : int
+  +Ferry(int journeyCode, Island source, Island destination, int price)
+  +getJourneyCode() : int
+  +setJourneyCode(int journeyCode) : void
+  +getSource() : Island
+  +setSource(Island source) : void
+  +getDestination() : Island
+  +setDestination(Island destination) : void
+  +getPrice() : int
+  +setPrice(int price) : void
+  +makeJourney(Pass pass) : String
+}
+
+class Pass {
+  -passId : int
+  -name : String
+  -luxuryRating : int
+  -credits : int
+  -journeyPoints : int
+  +Pass(int id, String name, int luxuryRating, int credits, int journeyPoints)
+  +getId() : int
+  +setId(int id) : void
+  +getName() : String
+  +setName(String name) : void
+  +getLuxuryRating() : int
+  +setLuxuryRating(int luxuryRating) : void
+  +getCredits() : int
+  +setCredits(int credits) : void
+  +getJourneyPoints() : int
+  +setJourneyPoints(int journeyPoints) : void
+  +useFerry() : void
+  +convertJourneyPoints() : void
+  +addCredits(int credits) : void
+  +deductCredits(int credits) : void
+  +toString() : String
+}
+
+ResortUI -down- Resort
+Resort -down- Island
+Resort -down- Pass
+Resort -down- Ferry
+Island -down- Pass
+Ferry -down- Pass
+
+@enduml
